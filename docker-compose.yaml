@@ -1,0 +1,9 @@
+version: '3'
+services:
+  reactdevops:
+    build: .
+    container_name: my_app
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true

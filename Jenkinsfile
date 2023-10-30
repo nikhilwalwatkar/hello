@@ -28,7 +28,7 @@ pipeline {
         stage('Create Docker Image') {
             steps {
                 script {
-                    bat 'docker build -t myapp:1.0 .'
+                    bat 'docker compose up'
                 }
             }
         }

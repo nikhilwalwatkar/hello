@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:20.9.0-alpine3.18' 
+            args '-p 3000:3000' 
+        }
+    }
+
     tools {
         nodejs 'node' // Use the tool name you configured in Jenkins
     }
@@ -14,7 +20,7 @@ pipeline {
         stage('Testing') {
             steps {
                 script {
-                        cd "./src/jenkins/scripts/test.sh"
+                        echo "testing running"
                 }
             }
         }

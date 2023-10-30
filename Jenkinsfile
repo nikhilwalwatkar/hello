@@ -14,8 +14,7 @@ pipeline {
         stage('Testing') {
             steps {
                 script {
-                        currentWorkspace = pwd()
-                        echo "Current workspace: ${currentWorkspace}"
+                        sh "./src/jenkins/scripts/test.sh"
                 }
             }
         }

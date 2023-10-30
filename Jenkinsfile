@@ -18,14 +18,13 @@ pipeline {
                 }
             }
         }
-        stage('Testing') {
+        stage('build') {
             steps {
                 script {
                        bat 'npm.cmd build'
                 }
             }
         }
-
     }
 }
 

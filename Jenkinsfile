@@ -10,6 +10,11 @@ pipeline {
                         bat 'npm.cmd install'
                 }
             }
+            steps {
+                script {
+                        bat 'npm.cmd test'
+                }
+            }
         }
 
     }

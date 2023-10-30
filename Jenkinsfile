@@ -10,14 +10,15 @@ pipeline {
                         sh "npm install"
                 }
             }
-        }
-        stage('Test react') {
-            steps {
+              steps {
                 script {
                         sh "npm run test"
                 }
             }
         }
+      
+          
+        
 
     }
 }

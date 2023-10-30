@@ -3,7 +3,7 @@ import App from '../App'
 
 test("checking the render",()=>{
     render(<App/>)
-    let torender=screen.getByText("Hello")
+    let torender=screen.getByText("Hello world")
     expect(torender).toBeInTheDocument()
 })
 

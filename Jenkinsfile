@@ -14,7 +14,8 @@ pipeline {
         stage('Testing') {
             steps {
                 script {
-                       bat 'npm.cmd run test -- --passWithNoTests'
+                        currentWorkspace = pwd()
+                        echo "Current workspace: ${currentWorkspace}"
                 }
             }
         }

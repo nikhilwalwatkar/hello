@@ -1,19 +1,17 @@
-
 pipeline {
     agent any
-     tools {
+    tools {
         nodejs 'node' // Use the tool name you configured in Jenkins
     }
     stages {
-        stage('Build') {
+        stage('Install Dependency') {
             steps {
-                sh 'npm install'
+                script {
+                        sh 'npm install'
+                }
             }
         }
-        // stage('Test') {
-        //     steps {
-        //         sh 'npm install'
-        //     }
-        // }
+
     }
 }
+

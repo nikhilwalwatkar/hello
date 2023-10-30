@@ -7,7 +7,14 @@ pipeline {
         stage('Install Dependency') {
             steps {
                 script {
-                        bat 'npm.cmd install'
+                        sh "npm install"
+                }
+            }
+        }
+        stage('Test react') {
+            steps {
+                script {
+                        sh "npm run test"
                 }
             }
         }

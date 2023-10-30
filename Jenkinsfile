@@ -5,10 +5,6 @@ pipeline {
             args '-p 3000:3000' 
         }
     }
-
-    tools {
-        nodejs 'node' // Use the tool name you configured in Jenkins
-    }
     stages {
         stage('Install Dependency') {
             steps {

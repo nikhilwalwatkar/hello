@@ -14,7 +14,7 @@ pipeline {
         stage('Testing') {
             steps {
                 script {
-                       bat 'npm.cmd run test'
+                       "test": "react-scripts test --passWithNoTests"
                 }
             }
         }

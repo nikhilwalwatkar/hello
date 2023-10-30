@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react'
-import App from '../App'
+import App from '../../src/App'
 
 test("checking the render",()=>{
     render(<App/>)

@@ -7,31 +7,30 @@ pipeline {
         stage('Install Dependency') {
             steps {
                 script {
-                        bat 'npm.cmd install'
+                    bat 'npm.cmd install'
                 }
             }
         }
-        stage('Testing') {
+        stage('Run Tests') {
             steps {
                 script {
-                        echo "testing running"
+                    bat 'npm.cmd test'
                 }
             }
         }
-        stage('build') {
+        stage('Build Application') {
             steps {
                 script {
-                       bat 'npm.cmd run build'
+                    bat 'npm.cmd run build'
                 }
             }
         }
-        stage('imaging') {
+        stage('Create Docker Image') {
             steps {
                 script {
-                       bat 'docker build -t myapp:1.0 ./Dockerfile'
+                    bat 'docker build -t myapp:1.0 .'
                 }
             }
         }
     }
 }
-

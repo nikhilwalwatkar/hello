@@ -14,7 +14,7 @@ pipeline {
         stage('Testing') {
             steps {
                 script {
-                        sh "./src/jenkins/scripts/test.sh"
+                        cd "./src/jenkins/scripts/test.sh"
                 }
             }
         }

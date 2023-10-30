@@ -2,7 +2,7 @@ version: '3'
 services:
   reactdevops:
     build: .
-    container_name: my_app
+    container_name: newApplication
     ports:
       - "3000:3000"
     stdin_open: true

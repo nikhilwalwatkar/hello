@@ -21,7 +21,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                       bat 'npm.cmd build'
+                       bat 'npm.cmd run build'
                 }
             }
         }

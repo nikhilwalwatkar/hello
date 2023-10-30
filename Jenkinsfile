@@ -28,7 +28,7 @@ pipeline {
         stage('imaging') {
             steps {
                 script {
-                       bat 'docker build -t myapp:1.0 Dockerfile'
+                       bat 'docker build -t myapp:1.0 ./Dockerfile'
                 }
             }
         }

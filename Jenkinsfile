@@ -45,6 +45,7 @@ pipeline {
                     }
                 }
             }
+        }
         stage('image tag') {
             steps {
                 script {

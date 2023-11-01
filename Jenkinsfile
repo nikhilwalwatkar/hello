@@ -3,6 +3,11 @@ pipeline {
     tools {
         nodejs 'node' // Use the tool name you configured in Jenkins
     }
+    environment {
+        ECR_REGISTRY_URL = '405255119935.dkr.ecr.ap-south-1.amazonaws.com' // Replace with your ECR registry URL
+        AWS_REGION = 'ap-south-1' // Replace with your AWS region
+        IMAGE_NAME = 'a' // Replace with the name of your Docker image
+    }
     stages {
         stage('Install Dependency') {
             steps {
@@ -35,7 +40,9 @@ pipeline {
         stage('Auth Docker') {
             steps {
                 script {
-                    bat 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 405255119935.dkr.ecr.ap-south-1.amazonaws.com'
+                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'your-credentials-id', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+                        bat "aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REGISTRY_URL}"
+                    }
                 }
             }
         }

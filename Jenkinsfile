@@ -40,8 +40,7 @@ pipeline {
         stage('Authenticate with ECR') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'PAT_jenkins',passwordVariable: 'AKIAV4WYWMQ7RGOBL3UP', usernameVariable: 'IRSyqGS+mZHAGNnLKfkZLICSiTsjc0zFQn+3A+6O')]) {
-                        bat "aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REGISTRY_URL}"
+                    bat 'aws configure'
                     }
                 }
             }

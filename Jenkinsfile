@@ -40,7 +40,7 @@ pipeline {
         stage('Auth Docker') {
             steps {
                 script {
-                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'your-credentials-id', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AKIAV4WYWMQ7RGOBL3UP', secretKeyVariable: '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']]) {
                         bat "aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REGISTRY_URL}"
                     }
                 }

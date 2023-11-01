@@ -4,7 +4,7 @@ pipeline {
         nodejs 'node' // Use the tool name you configured in Jenkins
     }
     environment {
-        ECR_REGISTRY_URL = '405255119935.dkr.ecr.ap-south-1.amazonaws.com' // Replace with your ECR registry URL
+        ECR_REGISTRY_URL = '405255119935.dkr.ecr.ap-south-1.amazonaws.com/react_devops' // Replace with your ECR registry URL
         AWS_REGION = 'ap-south-1' // Replace with your AWS region
         IMAGE_NAME = 'a' // Replace with the name of your Docker image
     }

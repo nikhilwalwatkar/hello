@@ -32,5 +32,26 @@ pipeline {
                 }
             }
         }
+        stage('Auth Docker') {
+            steps {
+                script {
+                    bat 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 405255119935.dkr.ecr.ap-south-1.amazonaws.com'
+                }
+            }
+        }
+        stage('image tag') {
+            steps {
+                script {
+                    bat 'docker tag react_devops:latest 405255119935.dkr.ecr.ap-south-1.amazonaws.com/react_devops:latest'
+                }
+            }
+        }
+        stage('image push') {
+            steps {
+                script {
+                    bat 'docker tag react_devops:latest 405255119935.dkr.ecr.ap-south-1.amazonaws.com/react_devops:latest'
+                }
+            }
+        }
     }
 }

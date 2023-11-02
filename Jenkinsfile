@@ -17,7 +17,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    echo "testing"
+                    bat "npm.cmd run test"
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline {
                 }
             }
         }
-        stage('Authenticate with ECR') {
+        stage('Pushing image to ECR') {
             steps {
                 script {
                     withEnv (["AWS_ACCESS_KEY_ID=${env.Access_key_ID}", "AWS_SECRET_ACCESS_KEY=${env.Secret_access_key}", "AWS_DEFAULT_REGION=${env.aws_region}"]){

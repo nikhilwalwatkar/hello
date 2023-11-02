@@ -24,7 +24,7 @@ pipeline {
         stage('Build Application') {
             steps {
                 script {
-                    bat 'npm.cmd run build'
+                    bat 'src\jenkins\scripts\test.sh'
                 }
             }
         }

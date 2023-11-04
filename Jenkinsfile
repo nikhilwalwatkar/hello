@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // sh 'npm install'
-                    sh "npm install"
+                    echo "npm install"
                 }
             }
         }
